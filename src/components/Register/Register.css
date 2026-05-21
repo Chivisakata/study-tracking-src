@@ -1,0 +1,170 @@
+/* ==========================================================================
+   KHUNG CONTAINER ĐĂNG KÝ (Kế thừa biến từ index.css)
+   ========================================================================== */
+.register-container {
+    background-color: var(--bg-card); /* Lấy từ index.css */
+    width: 100%;
+    max-width: 460px; /* Rộng hơn login một chút vì nhiều trường thông tin hơn */
+    padding: 35px 30px;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 
+                0 8px 10px -6px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.4s ease-out; /* Hiệu ứng xuất hiện mượt mà */
+}
+
+/* TIÊU ĐỀ */
+.register-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.register-header .logo-icon {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+}
+
+.register-header h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--text-main);
+}
+
+.register-header p {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    line-height: 1.4;
+}
+
+/* FORM CẤU TRÚC */
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Khoảng cách giữa các ô nhập liệu */
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.input-group label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Biểu tượng SVG nội bộ */
+.input-icon {
+    position: absolute;
+    left: 14px;
+    width: 18px;
+    height: 18px;
+    color: var(--text-muted);
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 11px 14px 11px 42px; /* Chừa chỗ bên trái cho SVG Icon */
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-main);
+    font-size: 0.92rem;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+/* Hiệu ứng focus */
+.input-wrapper input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* ĐIỀU KHOẢN */
+.terms-agree {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    margin-top: 4px;
+    user-select: none;
+}
+
+.terms-agree input {
+    margin-top: 2px;
+    cursor: pointer;
+}
+
+/* NÚT ĐĂNG KÝ (Tông màu chủ đạo giống login nhưng dùng icon SVG) */
+.btn-register {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    margin-top: 10px;
+}
+
+.btn-register:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+.btn-register:active {
+    transform: translateY(1px);
+}
+
+.btn-arrow-icon {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.2s;
+}
+
+.btn-register:hover .btn-arrow-icon {
+    transform: translateX(4px); /* Hiệu ứng mũi tên lao về phía trước khi hover */
+}
+
+/* FOOTER */
+.register-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+}
+
+.login-link {
+    color: var(--primary);
+    text-decoration: none;
+    margin-left: 6px;
+    transition: color 0.2s;
+}
+
+.login-link:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+/* HIỆU ỨNG FADE-IN */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

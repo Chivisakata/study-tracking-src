@@ -1,7 +1,7 @@
 import React from 'react'
 import './Login.css'
 
-export default function Login() {
+export default function Login({ onSwitchPage }) {
   return (
     <div className="login-container">
       {/* 
@@ -75,10 +75,21 @@ export default function Login() {
 
       </form>
 
-      {/* Chuyển sang Đăng ký */}
+       {/* Chuyển sang Đăng ký */}
       <div className="login-footer">
         <span>Chưa có tài khoản?</span>{' '}
-        <a href="#" className="register-link">Tạo tài khoản mới</a>
+        <span>Chưa có tài khoản?</span>{' '}
+        {/* Khi bấm vào, chiếc công tắc sẽ chuyển trạng thái để hiện trang Register */}
+        <a 
+            href="#" 
+            className="register-link"
+            onClick={(e) => {
+            e.preventDefault(); // Chặn không cho trình duyệt load lại trang
+            onSwitchPage();     // Kích hoạt hàm chuyển trang truyền từ App.js xuống
+            }}
+        >
+        Tạo tài khoản mới
+        </a>
       </div>
     </div>
   )
