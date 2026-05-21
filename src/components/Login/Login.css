@@ -1,0 +1,203 @@
+/* ==========================================================================
+   1. RESET & BIẾN TOÀN CỤC (VARIABLES)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --bg-main: #0f172a;       /* Màu nền tối sâu (Slate 900) */
+    --bg-card: #1e293b;       /* Màu nền của khung đăng nhập (Slate 800) */
+    --text-main: #f8fafc;     /* Màu chữ chính sáng trắng */
+    --text-muted: #94a3b8;    /* Màu chữ phụ, chú thích */
+    --primary: #3b82f6;       /* Màu xanh công nghệ (Blue 500) */
+    --primary-hover: #2563eb; /* Màu xanh khi hover */
+    --border-color: #334155;  /* Màu đường viền nhẹ nhàng */
+    --input-bg: #0f172a;      /* Màu nền của ô nhập liệu */
+}
+
+/* ==========================================================================
+   2. BỐ CỤC NỀN CHÍNH
+   ========================================================================== */
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    /* Hiệu ứng ánh sáng mờ phía sau để tạo chiều sâu */
+    background-image: radial-gradient(circle at 50% 50%, #1e1b4b 0%, #0f172a 100%);
+}
+
+/* ==========================================================================
+   3. KHUNG CONTAINER ĐĂNG NHẬP
+   ========================================================================== */
+.login-container {
+    background-color: var(--bg-card);
+    width: 100%;
+    max-width: 420px;
+    padding: 40px 30px;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 
+                0 8px 10px -6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+/* 4. TIÊU ĐỀ */
+.login-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.logo-icon {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+    animation: pulse 2s infinite; /* Hiệu ứng đập nhẹ cho icon */
+}
+
+.login-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.login-header p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   5. CÁC Ô NHẬP LIỆU (INPUTS)
+   ========================================================================== */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+.label-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Biểu tượng trong ô input */
+.input-icon {
+    position: absolute;
+    left: 14px;
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 12px 14px 12px 42px; /* Dành khoảng trống bên trái cho icon */
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-main);
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+/* Hiệu ứng khi click vào ô nhập liệu */
+.input-wrapper input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* ==========================================================================
+   6. CÁC THÀNH PHẦN PHỤ & NÚT BẤM
+   ========================================================================== */
+.forgot-link, .register-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+}
+
+.forgot-link:hover, .register-link:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.remember-me input {
+    cursor: pointer;
+}
+
+/* NÚT ĐĂNG NHẬP */
+.btn-login {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    margin-top: 10px;
+}
+
+.btn-login:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px); /* Nút nhích nhẹ lên tạo cảm giác cơ học */
+}
+
+.btn-login:active {
+    transform: translateY(1px); /* Nút lún xuống khi bấm */
+}
+
+/* FOOTER */
+.login-footer {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   7. ANIMATION HIỆU ỨNG VUI MẮT
+   ========================================================================== */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+}
